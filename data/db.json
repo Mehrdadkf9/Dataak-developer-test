@@ -2,11 +2,13 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "مشکل در Auth در React",
+      "content": "سلام من میخوام یه Authentication ساده تو React بسازم اما این error رو بهم میده. نمیدونم مشکل از کجاست. عکس خروجی console هم گذاشتم که ببینید دقیقا چه مشکلی وجود داره",
+      "time": "12:52",
+      "date": "1401/1/15"
     }
   ],
-  "comments": [
+  "answers": [
     {
       "id": 1,
       "body": "some comment",
