@@ -24,7 +24,7 @@ const Card = ({ question, router }) => {
           <p className="text-gray-700 pl-2">تاریخ: {question.date}</p>
           <Comment />
           {question.answers ? (
-            <p className="mr-1"> {question.answers.length}</p>
+            <p className="mr-1">{question.answers.length}</p>
           ) : (
             <p className="mr-1"> 0 </p>
           )}

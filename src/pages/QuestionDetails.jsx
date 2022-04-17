@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
+import AnswersCards from "../components/answers/AnswersCards";
 import Card from "../components/cards/Card";
 import TopBar from "../components/topBar/TopBar";
 import withRouter from "../components/withRouter/WithRouter";
-import { getQuestionsDetail } from "./../api/api";
+import { useAnswers, useAnswersActions } from "../context/AnswersProvider";
+import { getAnswers, getQuestionsDetail } from "./../api/api";
 
 const QuestionDetails = ({ router }) => {
   const [question, setQuestion] = useState({});
   const questionDetailId = router.params.id;
 
+  const { updateAnswers } = useAnswersActions();
+  const answers = useAnswers();
+  console.log(answers);
+
   useEffect(() => {
     getQuestionsDetail(questionDetailId).then((res) => setQuestion(res.data));
+    getAnswers().then((res) => updateAnswers(res.data));
   }, []);
 
   return (
@@ -23,6 +30,8 @@ const QuestionDetails = ({ router }) => {
           >
             <Card question={question} />
           </div>
+
+          <AnswersCards answers={answers} question={question} />
         </div>
       </div>
     </div>
