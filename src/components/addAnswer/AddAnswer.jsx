@@ -44,6 +44,7 @@ const AddAnswer = ({ id }) => {
           className="w-full rounded-md p-4 text-sm mt-3 mb-3"
           onChange={changeHandler}
         ></textarea>
+
         <button
           className="bg-dataakPrimary text-white rounded-md w-48 p-2 text-xs "
           onClick={addNewAnswer}

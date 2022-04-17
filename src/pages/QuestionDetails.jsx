@@ -12,7 +12,7 @@ const QuestionDetails = ({ router }) => {
 
   const { updateAnswers } = useAnswersActions();
   const answers = useAnswers();
-  console.log(answers);
+  // console.log(answers);
 
   useEffect(() => {
     getQuestionsDetail(questionDetailId).then((res) => setQuestion(res.data));
@@ -28,7 +28,7 @@ const QuestionDetails = ({ router }) => {
             key={question.id}
             className="shadow-modal bg-dataakWhite rounded-lg mb-5"
           >
-            <Card question={question} />
+            <Card question={question} answers={answers} />
           </div>
 
           <AnswersCards answers={answers} question={question} />

@@ -6,7 +6,7 @@ const AnswersCards = ({ answers, question }) => {
   const filteredAnswers = answers.filter(
     (answer) => answer.scope === question.id
   );
-  console.log(filteredAnswers);
+  // console.log(filteredAnswers);
 
   return (
     <div>

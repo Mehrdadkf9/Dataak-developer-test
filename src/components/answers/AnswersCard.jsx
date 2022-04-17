@@ -4,7 +4,7 @@ import Happy from "./../../assets/icons/Happy";
 import Sad from "../../assets/icons/Sad";
 
 const AnswersCard = ({ answer }) => {
-  console.log(answer);
+  // console.log(answer);
   return (
     <>
       <header className="shadow-modal border rounded-lg opacity-70 bg-white flex justify-between p-2">

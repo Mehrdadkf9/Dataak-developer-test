@@ -58,7 +58,7 @@ const AddQuestion = () => {
                   <Close />
                 </button>
               </div>
-              <div className="flex flex-col p-5">
+              <form className="flex flex-col p-5">
                 <label>موضوع</label>
                 <input
                   className="border-dataakGray border rounded-md mt-2 pr-3"
@@ -73,7 +73,7 @@ const AddQuestion = () => {
                   onChange={changeHandler}
                   name="content"
                 />
-              </div>
+              </form>
               <div className="flex justify-end mt-2 p-5">
                 <button
                   onClick={() => setShowModal(false)}

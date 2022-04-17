@@ -10,14 +10,16 @@
   ],
   "answers": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "content": "sfsd",
+      "time": "23:23",
+      "date": "۱۴۰۱/۱/۲۸",
+      "scope": 1,
+      "id": 1
     },
     {
-      "content": "salalndksjnfkdjs",
-      "time": "23:10",
-      "date": "۱۴۰۱/۱/۲۸",
+      "content": "",
+      "time": "",
+      "date": "",
       "scope": 1,
       "id": 2
     }

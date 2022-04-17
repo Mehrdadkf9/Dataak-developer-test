@@ -1,9 +1,23 @@
 import { Link } from "react-router-dom";
+import { useAnswers } from "../../context/AnswersProvider";
 import withRouter from "../withRouter/WithRouter";
 import Comment from "./../../assets/icons/Comment";
 import user from "./../../assets/images/user.png";
+import { useState } from "react";
+import { useEffect } from "react";
+import { getAnswers } from "./../../api/api";
 
 const Card = ({ question, router }) => {
+  const [answers, setAnswers] = useState([]);
+
+  useEffect(() => {
+    getAnswers().then((res) => setAnswers(res.data));
+  });
+
+  const filteredAnswers = answers.filter(
+    (answer) => question.id == answer.scope
+  );
+
   return (
     <>
       <header className="shadow-modal rounded-lg opacity-70 bg-white flex justify-between p-2">
@@ -23,8 +37,8 @@ const Card = ({ question, router }) => {
           </p>
           <p className="text-gray-700 pl-2">تاریخ: {question.date}</p>
           <Comment />
-          {question.answers ? (
-            <p className="mr-1">{question.answers.length}</p>
+          {answers && filteredAnswers ? (
+            <p className="mr-1">{filteredAnswers.length}</p>
           ) : (
             <p className="mr-1"> 0 </p>
           )}
