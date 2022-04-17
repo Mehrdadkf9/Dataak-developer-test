@@ -18,24 +18,30 @@ const AddAnswer = ({ id }) => {
   const date = new Date().toLocaleDateString("fa-IR");
 
   const changeHandler = (e) => {
-    e.preventDefault();
     setNewAnswer({
       ...newAnswer,
-      [e.target.name]: e.target.value,
+      content: e.target.value,
       time: time,
       date: date,
     });
   };
 
-  const addNewAnswer = () => {
-    setNewAnswer({ ...newAnswer });
-    addAnswer(newAnswer, id);
+  const addNewAnswer = (answer) => {
+    setNewAnswer({ answer });
+    addAnswer(answer, id);
+    setNewAnswer({ content: "" });
   };
 
   return (
     <div className="mb-10">
       <h1 className="text-xl mb-4">پاسخ خود را ثبت کنید</h1>
-      <form>
+      <form
+        method="POST"
+        onSubmit={(e) => {
+          e.preventDefault();
+          addNewAnswer(newAnswer);
+        }}
+      >
         <label className="text-xs">پاسخ خود را بنویسید</label>
         <textarea
           name="content"
@@ -43,11 +49,12 @@ const AddAnswer = ({ id }) => {
           rows={5}
           className="w-full rounded-md p-4 text-sm mt-3 mb-3"
           onChange={changeHandler}
+          value={newAnswer.content}
         ></textarea>
 
         <button
           className="bg-dataakPrimary text-white rounded-md w-48 p-2 text-xs "
-          onClick={addNewAnswer}
+          type="submit"
         >
           ارسال پاسخ
         </button>

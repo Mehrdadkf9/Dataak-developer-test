@@ -4,7 +4,6 @@ import Happy from "./../../assets/icons/Happy";
 import Sad from "../../assets/icons/Sad";
 
 const AnswersCard = ({ answer }) => {
-  // console.log(answer);
   return (
     <>
       <header className="shadow-modal border rounded-lg opacity-70 bg-white flex justify-between p-2">
@@ -32,6 +31,7 @@ const AnswersCard = ({ answer }) => {
       <section className="p-3">
         <p>{answer.content}</p>
         <div className="flex justify-end">
+          {/* if we have auth , we can limit click of buttons to 1 time for happy or sad */}
           <button className="flex items-center ml-2 border p-1 border-dataakSuccess text-dataakSuccess rounded-md">
             <Happy />
             پاسخ خوب بود

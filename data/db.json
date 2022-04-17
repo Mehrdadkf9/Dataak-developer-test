@@ -8,22 +8,7 @@
       "date": "1401/1/15"
     }
   ],
-  "answers": [
-    {
-      "content": "sfsd",
-      "time": "23:23",
-      "date": "۱۴۰۱/۱/۲۸",
-      "scope": 1,
-      "id": 1
-    },
-    {
-      "content": "",
-      "time": "",
-      "date": "",
-      "scope": 1,
-      "id": 2
-    }
-  ],
+  "answers": [],
   "profile": {
     "name": "typicode"
   }

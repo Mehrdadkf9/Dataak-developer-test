@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useAnswers } from "../../context/AnswersProvider";
 import withRouter from "../withRouter/WithRouter";
 import Comment from "./../../assets/icons/Comment";
 import user from "./../../assets/images/user.png";
@@ -29,7 +28,7 @@ const Card = ({ question, router }) => {
             width={32}
             height={32}
           />
-          <h3>{question.title}</h3>
+          <h3 className="text-base">{question.title}</h3>
         </div>
         <div className="flex items-center">
           <p className="border-l text-gray-700 ml-4 pl-4">
@@ -45,7 +44,7 @@ const Card = ({ question, router }) => {
         </div>
       </header>
       <section className="p-3">
-        <p>{question.content}</p>
+        <p className="text-sm">{question.content}</p>
         {router.location.pathname !== "/" ? null : (
           <div className="flex justify-end">
             <Link to={`/${question.id}`}>

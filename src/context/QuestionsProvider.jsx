@@ -24,8 +24,8 @@ export const useQuestions = () => useContext(QuestionsContext);
 export const useQuestionsActions = () => {
   const setQuestions = useContext(QuestionsContextDispatcher);
 
-  const addQuestion = (comment) => {
-    postQuestion(comment)
+  const addQuestion = (question) => {
+    postQuestion(question)
       .then(() => getQuestions())
       .then((res) => setQuestions(res.data));
   };
